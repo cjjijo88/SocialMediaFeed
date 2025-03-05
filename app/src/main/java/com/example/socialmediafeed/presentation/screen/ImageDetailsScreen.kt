@@ -48,7 +48,7 @@ fun ImageDetailScreen(navController: NavController, imageDetails: ImageData?, vi
     val comments by viewModel.comments.collectAsState()
 
     LaunchedEffect(imageDetails?.id) {
-        viewModel.fetchComments(imageDetails!!.id)
+        viewModel.fetchComments(imageDetails?.id)
     }
 
     Scaffold(
