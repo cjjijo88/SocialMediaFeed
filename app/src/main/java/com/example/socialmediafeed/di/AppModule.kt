@@ -18,7 +18,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
     private const val BASE_URL = "https://api.unsplash.com/"
-    private const val ACCESS_KEY = "ccVdquafya6OGlisLfgPJT8mZAuSWuV3TirP1vCuBxY" // 🔑 Replace with your actual key
+    private const val ACCESS_KEY = "ccVdquafya6OGlisLfgPJT8mZAuSWuV3TirP1vCuBxY"
 
     @Provides
     @Singleton
@@ -27,7 +27,7 @@ object AppModule {
             .addInterceptor { chain ->
                 val original = chain.request()
                 val newRequest = original.newBuilder()
-                    .header("Authorization", "Client-ID $ACCESS_KEY") // Attach API key
+                    .header("Authorization", "Client-ID $ACCESS_KEY")
                     .build()
                 chain.proceed(newRequest)
             }
